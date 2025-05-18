@@ -31,20 +31,24 @@ function voegCitaatObjectToe(citaatObject) {
 }
 
 // for loop
+/* 
 for (let i = 0; i < citaten.length; i++) {
   voegCitaatObjectToe(citaten[i]);
 }
+*/
 
 // for ... of ... loop
+/* 
 for (const citaat of citaten) {
   voegCitaatObjectToe(citaat);
 }
+*/
 
 // forEach (_iz nice!!_)
 citaten.forEach(voegCitaatObjectToe);
 
 // forEach fat arrow
-citaten.forEach(citaat => { voegCitaatObjectToe(citaat) });
+/* citaten.forEach(citaat => { voegCitaatObjectToe(citaat) }); */
 
 // andere loops gedemonstreerd op https://javascript.info/
 
