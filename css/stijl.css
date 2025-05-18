@@ -4,6 +4,9 @@
   --navhoverbgkleur: #0d4083;
   --navhover: rgb(249, 229, 12);
   --afronding: 8px;
+  --nl: #f00;
+  --en: rgb(2, 81, 23);
+  --fr: rgb(169, 166, 2);
 }
 
 * {
@@ -96,11 +99,17 @@ nav li.hier a {
   padding: 0.5em;
 }
 
+.citaten {
+  margin-bottom: 2em;
+}
 .citaten article {
   background-color: #f5f5f5;
   padding: 1em;
   box-shadow: 0 0 3px #999;
   border-radius: var(--afronding);
+  margin-bottom: 1em;
+  border-left-width: 10x;
+  border-left-style: solid;
 }
 
 .citaten article .auteur {
@@ -117,6 +126,13 @@ nav li.hier a {
   /* OK */
   content: "—";
 }
+
+ul {
+  /* list-style: none; */
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
 button {
   padding: 5px 1em;
   font-family: "PT Serif", serif;
@@ -135,4 +151,13 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
+}
+article.nl {
+  border-left-color: var(--nl);
+}
+article.en {
+  border-left-color: var(--en);
+}
+article.fr {
+  border-left-color: var(--fr);
 }
