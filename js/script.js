@@ -1,49 +1,4 @@
-// h1 & p aanpassen
-document.querySelector('h1').innerText = 'Inspirerende citaten';
-document.querySelector('#geencitaten').innerText = '';
-
-// Citaat toevoegen - oldskool
-/* 
-const titel = 'To be';
-const citaat = 'To be or not to be, that\'s the question.';
-const auteur = 'William Shakespeare';
-const taal = 'en';
-const artikel = document.createElement('article');
-artikel.innerHTML = `<h2>${titel}</h2><p>${citaat}</p><p class="auteur">${auteur}</p>`;
-artikel.classList.add(`${taal}`);
-document.querySelector('section.citaten').appendChild(artikel);
-*/
-
-// Citaat verwijderen - oldskool
-document.getElementById('geencitaten').remove();
-
-// Nieuw citaat toeboegen - EXTREMELY un-DRY
-/* 
-const titel2 = 'Vandaag';
-const citaat2 = 'Wat je vandaag moet doen, moet je doen zoals je morgen denkt dat je het had moeten doen.';
-const auteur2 = 'Toon Hermans';
-const taal2 = 'nl';
-const artikel2 = document.createElement('article');
-artikel2.innerHTML = `<h2>${titel2}</h2><p>${citaat2}</p><p class="auteur">${auteur2}</p>`;
-artikel2.classList.add(`${taal2}`);
-document.querySelector('section.citaten').appendChild(artikel2);
-*/
-
-// Voeg citaten toe d.m.v.functie
-function voegCitaatToe(titel, citaat, auteur, taal) {
-  artikel = document.createElement('article');
-  artikel.innerHTML = `<h2>${titel}</h2><p>${citaat}</p><p class="auteur">${auteur}</p>`;
-  artikel.classList.add(`${taal}`);
-  document.querySelector('.citaten').insertAdjacentElement('beforeend', artikel);
-}
-
-function voegCitaatObjectToe(citaatObject) {
-  artikel = document.createElement('article');
-  artikel.innerHTML = `<h2>${citaatObject.titel}</h2><p>${citaatObject.citaat}</p><p class="auteur">${citaatObject.auteur}</p>`;
-  artikel.classList.add(`${citaatObject.taal}`);
-  document.querySelector('.citaten').insertAdjacentElement('beforeend', artikel);
-}
-
+// citaten
 const citaten = [{
   titel: 'To be',
   citaat: 'To be or not to be, that\'s the question.',
@@ -63,45 +18,25 @@ const citaten = [{
   taal: 'fr'
 }]
 
+// h1 & p aanpassen
+document.querySelector('h1').innerText = 'Inspirerende citaten';
+document.getElementById('geencitaten').remove();
+
+// Voeg citaten toe d.m.v.functie
+function voegCitaatObjectToe(citaatObject) {
+  artikel = document.createElement('article');
+  artikel.innerHTML = `<h2>${citaatObject.titel}</h2><p>${citaatObject.citaat}</p><p class="auteur">${citaatObject.auteur}</p>`;
+  artikel.classList.add(`${citaatObject.taal}`);
+  document.querySelector('.citaten').insertAdjacentElement('beforeend', artikel);
+}
+
 citaten.forEach(citaat => { voegCitaatObjectToe(citaat) });
-
-
-
-
-
-// Voeg footer toe
-// manier A
-/* 
-const footer = document.createElement('footer');
-footer.innerHTML = '<p>&copy; 2025</p>';
-document.body.insertAdjacentElement('beforeend', footer);
-*/
-// manier B
-document.body.insertAdjacentHTML('beforeend', '<footer><p>&copy; 2025</p></footer>');
-
-
-// click event: random kleur kop
-// klassieke notatie
-/* 
-const h1Titel = document.querySelector('h1');
-h1Titel.addEventListener('click', function () {
-  const rood = Math.round(Math.random() * 255);
-  const groen = Math.round(Math.random() * 255);
-  const blauw = Math.round(Math.random() * 255);
-  h1Titel.style.color = `rgb(${rood},${groen},${blauw})`; 
-})
-*/
-// fat arrow
-const h1Titel = document.querySelector('h1');
-h1Titel.addEventListener('click', () => {
-  const rood = Math.round(Math.random() * 255);
-  const groen = Math.round(Math.random() * 255);
-  const blauw = Math.round(Math.random() * 255);
-  h1Titel.style.color = `rgb(${rood},${groen},${blauw})`;
-})
 
 // toggle button voor drie kolommen
 const kolommenKnop = document.querySelector('#kolommen');
 kolommenKnop.addEventListener('click', () => {
   document.querySelector('.citaten').classList.toggle('drie-kolommen')
-})
+});
+
+// footer
+document.body.insertAdjacentHTML('beforeend', '<footer><p>&copy; 2025</p></footer>');
