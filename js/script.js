@@ -30,6 +30,17 @@ function voegCitaatObjectToe(citaatObject) {
   document.querySelector('.citaten').insertAdjacentElement('beforeend', artikel);
 }
 
+// for loop
+for (let i = 0; i < citaten.length; i++) {
+  voegCitaatObjectToe(citaten[i]);
+}
+
+// for ... of ... loop
+for (const citaat of citaten) {
+  voegCitaatObjectToe(citaat);
+}
+
+// forEach
 citaten.forEach(citaat => { voegCitaatObjectToe(citaat) });
 
 // toggle button voor drie kolommen
