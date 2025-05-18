@@ -68,3 +68,14 @@ const langsteCitaatTekst = langsteCitaatZoeker()
 
 document.querySelector('#aantalCitaten').innerText += ' ' + citaten.length;
 document.querySelector('#langsteCitaat').innerText = `Langste citaat: (${langsteCitaatTekst.citaat.length} letters, auteur: ${langsteCitaatTekst.auteur}) "${langsteCitaatTekst.citaat}"`;
+
+
+/* 
+let filterInput = document.querySelector('#filter').value;
+filterInput.addEventListener('change', (e) => {
+  e.preventDefault();
+  console.log('dddddddddddddddd')
+  console.log(filterInput.value);
+}); */
+
+HTMLInputElement.addEventListener('change', () => { console.log('triggered'); })

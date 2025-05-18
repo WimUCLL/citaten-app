@@ -30,13 +30,16 @@ footer {
   background-color: var(--headerkleur);
   box-shadow: 0 0 5px #999;
 }
+
 footer {
   padding: 1em;
 }
+
 footer p {
   text-align: center;
   color: #fff;
 }
+
 header div.wrapper {
   display: flex;
   flex-direction: row;
@@ -102,6 +105,7 @@ nav li.hier a {
 .citaten {
   margin-bottom: 2em;
 }
+
 .citaten article {
   background-color: #f5f5f5;
   padding: 1em;
@@ -116,6 +120,7 @@ nav li.hier a {
   font-style: italic;
   text-align: right;
 }
+
 .citaten article .auteur::before {
   /* NOK */
   /* 
@@ -143,30 +148,52 @@ button {
   border: 1px solid #054674;
   border: 1px solid transparent;
 }
+
 button:hover {
   border: 1px solid #054674;
   cursor: pointer;
 }
+
 .citaten {
   display: grid;
   /* grid-template-columns: repeat(3, 1fr); */
   gap: 1em;
 }
+
 article.nl {
   border-left-color: var(--nl);
 }
+
 article.en {
   border-left-color: var(--en);
 }
+
 article.fr {
   border-left-color: var(--fr);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0 2em;
+  background-color: #2f2f2f;
+  background-color: #f2f2f2;
+  padding: 1em 1em 0 1em;
+  border-radius: var(--afronding);
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 1.5rem;
+}
+
+/* MEDIA QUERIES */
 @media only screen and (min-width: 45em) {
   section.citaten {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media only screen and (min-width: 60em) {
   section.citaten {
     grid-template-columns: repeat(3, 1fr);

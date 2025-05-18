@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     rel="stylesheet">
   <script src="js/script.js" type="module"></script>
 </head>
+
 <body>
   <header>
     <div class="wrapper">
@@ -24,7 +26,15 @@
     </div>
   </header>
   <div class="wrapper">
-    <button id="kolommen">Kolommen aan/uit</button>
+    <h2>Toon enkele citaten met deze zoektekst</h2>
+    <p>Aantal karakters in het zoekveld:<span id="aantalLetters"></span></p>
+
+    <form class="zoektekst">
+      <input type="text">
+    </form>
+
+    <!-- <button id="kolommen">Kolommen aan/uit</button> -->
+    <!-- <input type="" id="filter"> -->
     <h1>Beroemde citaten</h1>
     <p id="geencitaten">Er zijn momenteel nog geen citaten op deze site.</p>
     <section class="citaten"></section>
@@ -35,4 +45,5 @@
     </ul>
   </div>
 </body>
+
 </html>
