@@ -117,3 +117,22 @@ nav li.hier a {
   /* OK */
   content: "—";
 }
+button {
+  padding: 5px 1em;
+  font-family: "PT Serif", serif;
+  font-size: 1.1rem;
+  background-color: var(--headerkleur);
+  color: #fff;
+  border-radius: var(--afronding);
+  border: 1px solid #054674;
+  border: 1px solid transparent;
+}
+button:hover {
+  border: 1px solid #054674;
+  cursor: pointer;
+}
+.drie-kolommen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}

@@ -37,9 +37,37 @@ function voegCitaatToe(titel, citaat, auteur, taal) {
   document.querySelector('.citaten').insertAdjacentElement('beforeend', artikel);
 }
 
-voegCitaatToe('To be', 'To be or not to be, that\'s the question.', 'William Shakespeare', 'en');
-voegCitaatToe('Vandaag', 'Wat je vandaag moet doen, moet je doen zoals je morgen denkt dat je het had moeten doen.', 'Toon Hermans', 'nl');
-voegCitaatToe('Penser', 'Je pense, donc je suis.', 'René Descartes', 'fr');
+function voegCitaatObjectToe(citaatObject) {
+  artikel = document.createElement('article');
+  artikel.innerHTML = `<h2>${citaatObject.titel}</h2><p>${citaatObject.citaat}</p><p class="auteur">${citaatObject.auteur}</p>`;
+  artikel.classList.add(`${citaatObject.taal}`);
+  document.querySelector('.citaten').insertAdjacentElement('beforeend', artikel);
+}
+
+const citaten = [{
+  titel: 'To be',
+  citaat: 'To be or not to be, that\'s the question.',
+  auteur: 'William Shakespeare',
+  taal: 'en'
+},
+{
+  titel: 'Vandaag',
+  citaat: 'Wat je vandaag moet doen, moet je doen zoals je morgen denkt dat je het had moeten doen.',
+  auteur: 'Toon Hermans',
+  taal: 'nl'
+},
+{
+  titel: 'Penser',
+  citaat: 'Je pense, donc je suis.',
+  auteur: 'René Descartes',
+  taal: 'fr'
+}]
+
+citaten.forEach(citaat => { voegCitaatObjectToe(citaat) });
+
+
+
+
 
 // Voeg footer toe
 // manier A
@@ -50,3 +78,30 @@ document.body.insertAdjacentElement('beforeend', footer);
 */
 // manier B
 document.body.insertAdjacentHTML('beforeend', '<footer><p>&copy; 2025</p></footer>');
+
+
+// click event: random kleur kop
+// klassieke notatie
+/* 
+const h1Titel = document.querySelector('h1');
+h1Titel.addEventListener('click', function () {
+  const rood = Math.round(Math.random() * 255);
+  const groen = Math.round(Math.random() * 255);
+  const blauw = Math.round(Math.random() * 255);
+  h1Titel.style.color = `rgb(${rood},${groen},${blauw})`; 
+})
+*/
+// fat arrow
+const h1Titel = document.querySelector('h1');
+h1Titel.addEventListener('click', () => {
+  const rood = Math.round(Math.random() * 255);
+  const groen = Math.round(Math.random() * 255);
+  const blauw = Math.round(Math.random() * 255);
+  h1Titel.style.color = `rgb(${rood},${groen},${blauw})`;
+})
+
+// toggle button voor drie kolommen
+const kolommenKnop = document.querySelector('#kolommen');
+kolommenKnop.addEventListener('click', () => {
+  document.querySelector('.citaten').classList.toggle('drie-kolommen')
+})
