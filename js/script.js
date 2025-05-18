@@ -4,6 +4,15 @@ import { citaten } from './citaten.js';
 document.querySelector('h1').innerText = 'Inspirerende citaten';
 document.getElementById('geencitaten').remove();
 
+citaten.push(
+  {
+    titel: 'Langste citaat',
+    citaat: 'Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans Toon Hermans', auteur: 'Toon Hermans',
+    auteur: 'Toon Hermans',
+    taal: 'nl'
+  },
+);
+
 // Voeg citaten toe d.m.v.functie
 let citaatLengte = 0;
 function voegCitaatObjectToe(citaatObject) {
@@ -45,10 +54,10 @@ const langsteCitaatTekst = citatenLengte()
  */
 
 const langsteCitaatZoeker = () => {
-  let langste = '';
+  let langste = { citaat: '' };
   for (const ciz of citaten) {
     console.log(ciz)
-    if (langste.length < ciz.citaat.length) {
+    if (langste.citaat.length < ciz.citaat.length) {
       langste = ciz;
     }
   }
@@ -56,10 +65,6 @@ const langsteCitaatZoeker = () => {
 }
 
 const langsteCitaatTekst = langsteCitaatZoeker()
-
-
-// console.log(44, typeof langsteCitaatTekst())
-
 
 document.querySelector('#aantalCitaten').innerText += ' ' + citaten.length;
 document.querySelector('#langsteCitaat').innerText = `Langste citaat: (${langsteCitaatTekst.citaat.length} letters, auteur: ${langsteCitaatTekst.auteur}) "${langsteCitaatTekst.citaat}"`;

@@ -147,9 +147,9 @@ button:hover {
   border: 1px solid #054674;
   cursor: pointer;
 }
-.drie-kolommen {
+.citaten {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
   gap: 1em;
 }
 article.nl {
@@ -160,4 +160,15 @@ article.en {
 }
 article.fr {
   border-left-color: var(--fr);
+}
+
+@media only screen and (min-width: 45em) {
+  section.citaten {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 60em) {
+  section.citaten {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -12,7 +12,7 @@ export const citaten = [{
 },
 {
   titel: 'Penser',
-  citaat: 'Je pense, donc je suis.',
+  citaat: 'Je pense, donc je suis.Je pense, donc je suis.Je pense, donc je suis.Je pense, donc je suis.Je pense, donc je suis.Je pense, donc je suis.',
   auteur: 'René Descartes',
   taal: 'fr'
 }];
