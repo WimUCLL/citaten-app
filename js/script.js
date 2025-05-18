@@ -40,8 +40,13 @@ for (const citaat of citaten) {
   voegCitaatObjectToe(citaat);
 }
 
-// forEach
+// forEach (_iz nice!!_)
+citaten.forEach(voegCitaatObjectToe);
+
+// forEach fat arrow
 citaten.forEach(citaat => { voegCitaatObjectToe(citaat) });
+
+// andere loops gedemonstreerd op https://javascript.info/
 
 // toggle button voor drie kolommen
 const kolommenKnop = document.querySelector('#kolommen');
