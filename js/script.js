@@ -40,3 +40,13 @@ function voegCitaatToe(titel, citaat, auteur, taal) {
 voegCitaatToe('To be', 'To be or not to be, that\'s the question.', 'William Shakespeare', 'en');
 voegCitaatToe('Vandaag', 'Wat je vandaag moet doen, moet je doen zoals je morgen denkt dat je het had moeten doen.', 'Toon Hermans', 'nl');
 voegCitaatToe('Penser', 'Je pense, donc je suis.', 'René Descartes', 'fr');
+
+// Voeg footer toe
+// manier A
+/* 
+const footer = document.createElement('footer');
+footer.innerHTML = '<p>&copy; 2025</p>';
+document.body.insertAdjacentElement('beforeend', footer);
+*/
+// manier B
+document.body.insertAdjacentHTML('beforeend', '<footer><p>&copy; 2025</p></footer>');
